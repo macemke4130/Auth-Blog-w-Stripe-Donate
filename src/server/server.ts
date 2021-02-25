@@ -8,7 +8,9 @@ import './middlewares/passport-strategies'; // File runs as import --
 
 const app = express();
 
-app.use(express.static('public'));
+const p = path.join(__dirname, '../public');
+
+app.use(express.static(p));
 app.use(passport.initialize());
 app.use(express.json());
 app.use(routes);
